@@ -4,6 +4,7 @@
   "description": "Build a video call application using webrtc and Pusher",
   "main": "index.js",
   "scripts": {
+	"start": "node index.js",
     "test": "node index.js"
   },
   "keywords": [

@@ -35,6 +35,11 @@ app.post('/pusher/auth', (req, res) => {
         res.send(auth);
 });
 
+// ssl verification (sslforfree -> letsencrypt)
+app.get('/.well-known/acme-challenge', (req, res) => {
+    return res.sendFile(__dirname + '/.well-known/acme-challenge/1u6uiDO0-OtJUMgcIuiTDR3I8ErdwrcVwzMQMMjBDMA');
+});
+
 //listen on the app
 app.listen(8080, () => {
     return console.log('Server is up on 8080')

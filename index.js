@@ -36,7 +36,7 @@ app.post('/pusher/auth', (req, res) => {
 });
 
 // ssl verification (sslforfree -> letsencrypt)
-app.get('/.well-known/acme-challenge', (req, res) => {
+app.get('/.well-known/acme-challenge/1u6uiDO0-OtJUMgcIuiTDR3I8ErdwrcVwzMQMMjBDMA', (req, res) => {
     return res.sendFile(__dirname + '/.well-known/acme-challenge/1u6uiDO0-OtJUMgcIuiTDR3I8ErdwrcVwzMQMMjBDMA');
 });
 

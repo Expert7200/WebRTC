@@ -36,6 +36,6 @@ app.post('/pusher/auth', (req, res) => {
 });
 
 //listen on the app
-app.listen(3000, () => {
-    return console.log('Server is up on 3000')
+app.listen(8080, () => {
+    return console.log('Server is up on 8080')
 });

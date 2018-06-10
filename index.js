@@ -37,20 +37,10 @@ app.post('/pusher/auth', (req, res) => {
 
 // ssl verification (sslforfree -> letsencrypt)
 app.get('/.well-known/acme-challenge/1u6uiDO0-OtJUMgcIuiTDR3I8ErdwrcVwzMQMMjBDMA', (req, res) => {
-    return res.sendFile(__dirname + '/.well-known/acme-challenge/1u6uiDO0-OtJUMgcIuiTDR3I8ErdwrcVwzMQMMjBDMA');
+    return res.sendFile(__dirname + '/public/.well-known/acme-challenge/1u6uiDO0-OtJUMgcIuiTDR3I8ErdwrcVwzMQMMjBDMA');
 });
 
-app.get('/.well-known', (req, res) => {
-    return res.sendFile(__dirname + '/.well-known/test.txt');
-});
-
-app.get('/.well-known/acme-challenge', (req, res) => {
-    return res.sendFile(__dirname + '/.well-known/acme-challenge/test2');
-});
-
-app.get('/.well-known/acme-challenge/test3', (req, res) => {
-    return res.sendFile(__dirname + '/.well-known/acme-challenge/test3');
-});
+app.use(express.static('public'));
 
 //listen on the app
 app.listen(8080, () => {
